@@ -1,5 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
+import Companies from './components/Companies';
 import Header from './components/Header';
 
 function App() {
@@ -14,6 +14,7 @@ function App() {
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
       <Header />
+      <Companies />
     </div>
   );
 }
