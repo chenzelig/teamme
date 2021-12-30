@@ -1,13 +1,14 @@
 import './Company.css';
 import CompayModel from "../models/company"
 import Button from "../components/CustomButtonComponent"
+import ReactPlayer from 'react-player/vimeo'
 
 function Company(props: CompayModel) {
     return (
         <div>
             <h2>{props.name}</h2>
             <video autoPlay muted loop controls width="420" height="420">
-                <source src={`${process.env.PUBLIC_URL}/${props.video}`} type="video/mp4" />
+                <source src={props.video} type="video/mp4" />
             </video>
             <div>
                 <Button

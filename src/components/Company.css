@@ -3,3 +3,7 @@
   margin-right: auto;
   padding: 200px;
 }
+
+iframe {
+  overflow: hidden;
+}
