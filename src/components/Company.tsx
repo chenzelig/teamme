@@ -1,37 +1,47 @@
-import './Company.css';
-import CompayModel from "../models/company"
-import Button from "../components/CustomButtonComponent"
-import ReactPlayer from 'react-player/vimeo'
+import React, { useEffect, useState } from 'react';
 
-function Company(props: CompayModel) {
+import './Company.css';
+
+import CompayModel from "../models/company"
+import CompanyHeader from './CompanyHeader';
+import CompanyVideo from './CompanyVideo';
+import ApplyButton from './ApplyButton';
+import CompanyFooter from './CompanyFooter';
+import { observer } from 'mobx-react-lite';
+import { useCompaniesStore } from '../context/CompaniesContext';
+
+interface Props {
+    company: CompayModel;
+    isSelected?: boolean;
+    index: number;
+}
+
+const  Company = observer(({ company, isSelected, index}: Props) => {
+    const [shoudRender, setShouldRender] = useState(false);
+
+    const { currentIndex } = useCompaniesStore()
+
+
+    useEffect(() => {
+        const shouldDislayItem = Math.abs(currentIndex -index) <= 2
+        setShouldRender(shouldDislayItem)
+    }, [currentIndex, index])
+
+    if(!shoudRender) {
+        return <div className="company" />
+    }
+    
     return (
-        <div>
-            <h2>{props.name}</h2>
-            <video autoPlay muted loop controls width="420" height="420">
-                <source src={props.video} type="video/mp4" />
-            </video>
-            <div>
-                <Button
-                    border="none"
-                    color="purple"
-                    height="50px"
-                    onClick={() => openNewWindow(props.url)}
-                    radius="50%"
-                    width="50px"
-                    children="Apply"
-                    fontColor="white"
-                />
+        <div className="company">
+            <CompanyHeader company={company} />
+            <div className="company-main-container">
+                <CompanyVideo index={index} src={company.video} isSelected={isSelected} />
+                <ApplyButton url={company.url} />
             </div>
-            <div>{props.text}</div>
-            <div>{props.employeesNumber}</div>
+            <CompanyFooter company={company} />
         </div>
     );
-}
+})
 
 export default Company;
-
-function openNewWindow(url: string) {
-    var win = window.open(url, '_blank');
-    // win.focus();
-}
 
