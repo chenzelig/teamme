@@ -1,9 +1,12 @@
-.Compoany{
-  margin-left: auto;
-  margin-right: auto;
-  padding: 200px;
+.company{
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
 }
 
-iframe {
-  overflow: hidden;
+
+
+.company-main-container{
+  position: relative;
+  flex: 1;
 }

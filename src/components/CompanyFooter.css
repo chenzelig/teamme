@@ -1,0 +1,28 @@
+.company-footer-container {
+  padding: 10px 16px;
+  text-align: left;
+}
+
+.company-footer-company-name{
+  padding: 0;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.company-footer-short-description{
+  padding: 0;
+  margin: 0;
+}
+
+.read-more-link{
+  color: blueviolet;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.extra-content{
+  padding: 0;
+  margin: 0;
+}

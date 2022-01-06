@@ -1,6 +1,6 @@
-.Companies{
-  font-family: sans-serif;
-  text-align: center;
+.companies{
   width: 100%;
+  flex: 1;
+  display: flex;
 }
 
