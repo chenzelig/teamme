@@ -1,24 +1,23 @@
-import React from 'react';
-import {observable, action, makeObservable} from 'mobx'
+import React from "react";
+import { observable, action, makeObservable } from "mobx";
 
 class CompaniesStore {
-  
   currentIndex: number = 0;
 
-  constructor(){
+  constructor() {
     makeObservable(this, {
       currentIndex: observable,
-      setCurrentIndex: action.bound
-    })
+      setCurrentIndex: action.bound,
+    });
   }
 
-  setCurrentIndex(index: number){
+  setCurrentIndex(index: number) {
     this.currentIndex = index;
   }
 }
 
-const companiesStore = new CompaniesStore()
+const companiesStore = new CompaniesStore();
 
-const companiesContext = React.createContext(companiesStore)
+const companiesContext = React.createContext(companiesStore);
 
-export const useCompaniesStore = () => React.useContext(companiesContext)
+export const useCompaniesStore = () => React.useContext(companiesContext);
