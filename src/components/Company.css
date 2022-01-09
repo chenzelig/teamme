@@ -1,10 +1,8 @@
 .company{
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 50px);
+  height: calc(calc(var(--vh, 1vh) * 100) - var(--header-height));
 }
-
-
 
 .company-main-container{
   position: relative;

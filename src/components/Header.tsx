@@ -1,6 +1,6 @@
 import "./Header.css";
 
-const logo = require(`../assets/Teamme_logo_BLACK.png`);
+const logo = require(`../assets/teamme-logo-black.png`);
 
 export default function Header() {
   return (

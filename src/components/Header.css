@@ -1,5 +1,5 @@
 .header{
-  height: 50px;
+  height: var(--header-height);
   background-color: white;
   display: flex;
   flex-direction: row;
@@ -10,7 +10,7 @@
 }
 
 .header-logo-container {
-  height: 50px;
+  height: 100%;
 }
 
 .header-logo {

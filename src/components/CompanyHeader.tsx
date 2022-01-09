@@ -1,7 +1,7 @@
 import "./CompanyHeader.css";
 import CompanyModel from "../models/company";
 
-const dummyImage = require("../assets/Teamme_logo_BLACK.png");
+const dummyImage = require("../assets/teamme-logo-black.png");
 
 interface Props {
   company: CompanyModel;
