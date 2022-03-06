@@ -75,7 +75,7 @@ const CompanyVideo = observer(({ src, isSelected, index }: Props) => {
         </Else>
       </If>
 
-      <video ref={playerRef} className="company-video" playsInline controls muted loop>
+      <video ref={playerRef} className="company-video" controls muted loop>
         <source src={src} type="video/mp4" />
       </video>
     </div>
